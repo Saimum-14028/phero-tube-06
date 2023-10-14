@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.3/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Work Sans -->
+    <!-- Google Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -23,15 +23,64 @@
 
      <!-- border-solid border-2 border-sky-500 -->
 </head>
-<body class="font-inter">
-    <header>
-
-    </header>
-    
+<body class="font-inter">  
     <main>
+        <h1 class="text-center text-red-700 font-bold text-3xl">Blog Questions</h1>
+        
+        <div class="text-justify text-xl">
+            <div class="border-solid border-2 border-sky-500 my-2">
+                <p class="m-2 text-violet-700 font-semibold">Discuss the scope of var, let, and const</p>
+                <p class="mx-2 my-1">var: Variables declared with var are function-scoped. This means they are visible throughout the function they are declared in, regardless of where the declaration occurs within the function.</p>
+                <p class="mx-2 my-1">let: Variables declared with let have block scope. This means they are only visible within the block (i.e., the code between curly braces) they are defined in, including loops, conditional statements, and functions.</p>
+                <p class="mx-2 my-1">const: Like let, const is block-scoped.</p>
+            </div>
 
+            <div class="border-solid border-2 border-sky-500 my-2">
+                <p class="m-2 text-violet-700 font-semibold">Tell us the use cases of null and undefined</p>
+                <p class="mx-2 my-1">null and undefined are both values in JavaScript that represent the absence of meaningful information, but they are used in slightly different contexts.</p>
+                <p class="mx-2 my-1">null:</p>
+                <p class="mx-2 my-1">Explicit Absence of Value: null is a deliberate assignment that represents the absence of any value or object.</p>
+                <p class="mx-2 my-1">Intentional Clearing of Value: It's often used when you want to explicitly clear a variable or object of its current value.</p>
+                <p class="mx-2 my-1">undefined:</p>
+                <p class="mx-2 my-1">Implicit Absence of Value: undefined represents a variable that has been declared but hasn't been assigned a value yet.</p>
+                <p class="mx-2 my-1">Return Value for Non-Existent Properties: When you try to access an object property that doesn't exist, the result is undefined.</p>
+            </div>
+
+           <div class="border-solid border-2 border-sky-500 my-2">
+                <p class="m-2 text-violet-700 font-semibold">What do you mean by REST API?</p>
+                <p class="mx-2 my-1">REST API stands for Representational State Transfer Application Programming Interface. It is an architectural style used in designing networked applications. </p>
+
+                <p class="mx-2 my-1">Here are some key points about REST API: </p>
+                
+                <p class="mx-2 my-1">Stateless: REST is stateless, meaning that each request from a client to a server must contain all the information needed to understand and fulfill the request. The server does not store any information about the client's state between requests. </p>
+                
+                <p class="mx-2 my-1">Resources and Representations: In a RESTful system, data is represented as resources, which can be any object, data, or service that can be accessed by the client. Each resource is identified by a unique URI (Uniform Resource Identifier). </p>
+                
+                <p class="mx-2 my-1">HTTP Methods: REST APIs make use of standard HTTP methods for performing operations on resources. The most common methods are: <br>
+                
+                GET: Retrieve data from the server. <br>
+                POST: Create a new resource on the server. <br>
+                PUT: Update an existing resource on the server. <br>
+                DELETE: Remove a resource from the server. <br>
+                CRUD Operations: RESTful APIs are often used for performing CRUD  (Create, Read, Update, Delete) operations on resources. </p>
+                
+                <p class="mx-2 my-1">Statelessness: As mentioned earlier, each request from a client must contain all the information needed to understand and fulfill the request. This means that the server does not rely on any client context being stored on the server between requests. </p>
+                
+                <p class="mx-2 my-1">JSON or XML: REST APIs typically use JSON (JavaScript Object Notation) or XML (eXtensible Markup Language) as the format for data exchange. </p>
+                
+                <p class="mx-2 my-1">Response Codes: RESTful APIs use standard HTTP status codes to indicate the success or failure of a request. </p>
+                
+                <p class="mx-2 my-1">Uniform Interface: REST APIs have a uniform and consistent way of interacting with resources. This uniformity simplifies the client-server interactions. </p>
+                
+                <p class="mx-2 my-1">Stateless Communication: RESTful communication is stateless, which means that each request/response from a client to a server must contain all the information necessary to understand and process the request. </p>
+                
+                <p class="mx-2 my-1">No Strict Schema: REST APIs do not require strict data schemas. This means that clients can request different representations of the same resource, such as JSON or XML. </p>
+                
+                <p class="mx-2 my-1">RESTful APIs are widely used in web development due to their simplicity, scalability, and ease of integration with different systems. They form the backbone of many modern web services and applications.</p>
+           </div>
+        </div>
     </main>
-    
+
     <script src="./blog.js"></script>
 </body>
 </html>
