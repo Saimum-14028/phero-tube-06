@@ -1,4 +1,4 @@
-console.log('ok');
+//console.log('ok');
 let count = 0, previousId;
 
 document.getElementById('blog').onclick = function() {
@@ -10,7 +10,9 @@ const videoCategory = async () => {
     const response = await fetch("https://openapi.programming-hero.com/api/videos/categories");
     const data = await response.json();
 
-    console.log(data.data);
+   // console.log(previousId)
+
+  //  console.log(data.data);
 
     const tab = document.getElementById("tab");
 
@@ -19,13 +21,13 @@ const videoCategory = async () => {
     tabCategory.forEach((category) => {
         const div = document.createElement("div");
         div.innerHTML = `
-            <a onclick="handleLoadVideos('${category.category_id}')" class="tab" id="tab${category.category_id}">${category.category}</a>
+            <a onclick="handleLoadVideos('${category.category_id}',${0})" class="tab" id="tab${category.category_id}">${category.category}</a>
             `;
         tab.appendChild(div);
       });
 };
 
-const handleLoadVideos = async (categoryId) => {
+const handleLoadVideos = async (categoryId,sort) => {
     const response = await fetch(
       `https://openapi.programming-hero.com/api/videos/category/${categoryId}`
     );
@@ -38,11 +40,7 @@ const handleLoadVideos = async (categoryId) => {
 
     document.getElementById(`tab${categoryId}`).classList.add('tab-active');
 
-
-
-    
-
-    console.log(data.data.length);
+  //  console.log(data.data.length);
   
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = "";
@@ -65,7 +63,15 @@ const handleLoadVideos = async (categoryId) => {
         noContainer.appendChild(div);
     }
 
-    data.data?.forEach((videos) => {
+    let finalData = data.data;
+
+    if(sort && finalData.length){
+        finalData = data.data.sort(compare);
+      //  console.log(finalData[0].others.views);
+        
+    }
+
+    finalData?.forEach((videos) => {
     //    console.log(videos);
 
         const div = document.createElement("div");
@@ -209,9 +215,6 @@ const handleLoadVideos = async (categoryId) => {
                 
                 `;
         }
-
-
-    
         cardContainer.appendChild(div);
       });
 
@@ -219,6 +222,14 @@ const handleLoadVideos = async (categoryId) => {
      count++;
   };
   
+document.getElementById("sort_video").onclick = function() {
+  //  alert("Button was clicked!");
+    handleLoadVideos(previousId,1);
+  };
 
+  function compare(a, b) {
+
+    return parseInt(b.others.views) - parseInt(a.others.views);
+}
 videoCategory();
-handleLoadVideos("1000");
+handleLoadVideos("1000",0);
